@@ -6,6 +6,7 @@ import {
   HiOutlineHome,
   HiOutlineHomeModern,
   HiOutlineUsers,
+  HiArrowUpTray,
 } from "react-icons/hi2";
 
 const NavList = styled.ul`
@@ -53,7 +54,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-function MainNav() {
+function MainNav({ setOpenUpload }) {
   return (
     <nav>
       <NavList>
@@ -82,6 +83,13 @@ function MainNav() {
         <li>
           <StyledNavLink to="/settings">
             <HiOutlineCog6Tooth /> <span>Settings</span>
+          </StyledNavLink>
+        </li>
+
+        <li>
+          <StyledNavLink to="/" onClick={() => setOpenUpload((prev) => !prev)}>
+            <HiArrowUpTray />
+            <span>Upload</span>
           </StyledNavLink>
         </li>
       </NavList>
